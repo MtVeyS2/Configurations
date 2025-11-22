@@ -31,7 +31,9 @@ def main() -> int:
     detector = cv2.QRCodeDetector()
     last_text: Optional[str] = None
 
-    print("Press 'q' in the video window to exit.")
+    print("Opening preview window... Press 'q' in the video window to exit.")
+
+    cv2.namedWindow("QR Scanner", cv2.WINDOW_AUTOSIZE)
 
     while True:
         success, frame = cap.read()
